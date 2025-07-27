@@ -17,6 +17,27 @@ app.get("/health", (req, res) => {
 
 //my function 
 import connectdb from "./config/connectdb.js";
+
+import student from "./models/student.model.js"
+
+app.post("/signpu",async (req,res)=>{
+    try{
+        const createdStudent = await student.create({
+            name:"priyanka",
+            email:"gangavane@gmail.com",
+            password:1234
+        })
+
+        let savestudent = await createdStudent.save()
+
+        return res.json({
+            data:savestudent
+        })
+
+    }catch(error){
+        console.log("error")
+    }
+})
 // const connectdb = async () => {
 //   try {
 //    await mongoose.connect("mongodb+srv://gangawanepriyanka412:Priyanka412@cluster0.dkondlo.mongodb.net/collage?retryWrites=true&w=majority");
