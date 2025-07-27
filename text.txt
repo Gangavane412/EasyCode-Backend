@@ -1,0 +1,1 @@
+mongodb+srv://gangawanepriyanka412:<db_password>@cluster0.dkondlo.mongodb.net/
